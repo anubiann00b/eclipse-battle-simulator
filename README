@@ -32,6 +32,8 @@ max_ships    - When battling battle this number of ships against the offense (de
 max_tries    - The number of battles to run to determine the % of win's
 offense      - The opposing team, by default it is [ancient], but it can be set to anything, such as [ancient, ancient] or [gcds]
 
+all_ships_must_survive - True by default this says that you only 'win' a battle if you have no losses.  Useful for comparing for example the different class sizes against each other.  Set to false if you want to get the results for any outcome that would cause a win.  This option only matters if max_ships is greater than 1.
+
 To disable a specific part (For example if it hasn't been drawn in your game yet or you just don't want it to be included) set the available flag to false in the parts listing.   
 
     $ parts['plasm missile'].available = false;

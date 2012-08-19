@@ -286,7 +286,10 @@ function execBattle(ships) {
         countUp();
     } while (ac > 0 && bc > 0);
     //console.log((ac > 0 ? 'a' : 'b') + ' won');
-    return bc > 0 && bc === initialbc;
+    if (all_ships_must_survive === true)
+        return bc > 0 && bc === initialbc;
+    else
+        return bc > 0;
 }
 
 function battle(playerA, playerB) {
@@ -476,3 +479,4 @@ var max_tries = 200;
 var max_research = 1;
 var max_cost = 10;
 var max_ships = 1;
+var all_ships_must_survive = true;
