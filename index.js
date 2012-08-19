@@ -124,15 +124,32 @@ for (var n in items) {
 }
 
 
-var alien = [];
-alien.push(items['ion cannon']);
-alien.push(items['ion cannon']);
-alien.push(items['electron computer']);
-alien.push(items['hull']);
-alien.push(items['influence_2']);
+var ancient = [];
+ancient.push(items['ion cannon']);
+ancient.push(items['ion cannon']);
+ancient.push(items['electron computer']);
+ancient.push(items['hull']);
+ancient.push(items['influence_2']);
 // technically not on the board, but not a valid ship without
-alien.push(items['nuclear drive']);
-alien.push(items['nuclear source']);
+ancient.push(items['nuclear drive']);
+ancient.push(items['nuclear source']);
+
+var gcds = [];
+gcds.push(items['ion cannon']);
+gcds.push(items['ion cannon']);
+gcds.push(items['ion cannon']);
+gcds.push(items['ion cannon']);
+gcds.push(items['electron computer']);
+gcds.push(items['hull']);
+gcds.push(items['hull']);
+gcds.push(items['hull']);
+gcds.push(items['hull']);
+gcds.push(items['hull']);
+gcds.push(items['hull']);
+gcds.push(items['hull']);
+// technically not on the board, but not a valid ship without
+gcds.push(items['nuclear drive']);
+gcds.push(items['fusion source']);
 
 var interceptor = [];
 interceptor.push({});
@@ -450,7 +467,7 @@ function test_dreadnought() {
     return test_ship(dreadnought);
 }
 
-var offense = [alien];
+var offense = [ancient];
 var max_tries = 200;
 var max_research = 1;
 var max_cost = 10;
