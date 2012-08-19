@@ -350,6 +350,8 @@ function allValidShipCombinations(numberOfSpaces) {
     for (var name in parts) {
         if (parts[name]['upgradeable'] === false)
             continue;
+        if (parts[name]['available'] === false)
+            continue;
         if ((parts[name]['cost_max'] || 0) > max_cost)
             continue;
         partsArray.push(parts[name]);
