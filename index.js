@@ -20,7 +20,7 @@ parts['antimatter cannon'] = {
     cost_max: 14,
     cost_min: 7
 };
-parts['plasma missle'] = {
+parts['plasma missile'] = {
     dice: 2,
     damage: 2,
     cost_max: 14,
