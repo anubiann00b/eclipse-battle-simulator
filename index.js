@@ -151,6 +151,9 @@ gcds.push(parts['hull']);
 gcds.push(parts['nuclear drive']);
 gcds.push(parts['fusion source']);
 
+// The following are the stock human ships
+// Modify them as needed for the stock alien ships
+
 var interceptor = [];
 interceptor.push({});
 interceptor.push(parts['ion cannon']);
@@ -192,7 +195,6 @@ function validShip(ship) {
     return true;
 }
 
-
 function rollDie() {
     var min = 1;
     var max = 6;
@@ -202,7 +204,7 @@ function rollDie() {
 // TODO currently if a dice is a hit
 // we simply assign it damage to the first valid
 // ship rather than optimally distributing the dice
-// which can matter is multi-ship battles.
+// which can matter is multi-ship multi-class battles.
 function execBattle(ships) {
     for (var ship in ships) {
         ships[ship].hit = 0;
@@ -214,14 +216,14 @@ function execBattle(ships) {
 
         function hit(ship) {
             ship.hit += damage;
-            //console.log('hit: ' + ship.side + ' got a hit of ' + damage);
+            //console.log('hit: ' + ship.player + ' got a hit of ' + damage);
         }
 
         var computer = attackingShip['computer'];
-        var side = attackingShip.side;
+        var player = attackingShip.player;
         var ahit = false;
         for (var ship in ships) {
-            if (ships[ship].side === side)
+            if (ships[ship].player === player)
                 continue;
             if ((ships[ship].hull - ships[ship].hit) < 0)
                 continue;
@@ -236,11 +238,11 @@ function execBattle(ships) {
                 }
             }
             //if ((ships[ship].hull - ships[ship].hit) < 0)
-            //    console.log(ships[ship].side + ' destroyed by ' + side + ' ' + damage + ' ' + roll);
+            //    console.log(ships[ship].player + ' destroyed by ' + player + ' ' + damage + ' ' + roll);
             if (ahit)
                 break;
         }
-        //console.log('attack: ' + side + ' ' + roll + ' ' + damage + ' ' + computer + ' ' + ahit);
+        //console.log('attack: ' + player + ' ' + roll + ' ' + damage + ' ' + computer + ' ' + ahit);
     }
 
     function rollDice(shoot_once) {
@@ -267,9 +269,9 @@ function execBattle(ships) {
         for (var ship in ships) {
             if ((ships[ship].hull - ships[ship].hit) < 0)
                 continue;
-            if (ships[ship].side === 'a')
+            if (ships[ship].player === 'a')
                 ac++;
-            if (ships[ship].side === 'b')
+            if (ships[ship].player === 'b')
                 bc++;
         }
     }
@@ -290,9 +292,9 @@ function execBattle(ships) {
 function battle(playerA, playerB) {
     // Tag the ships and put into one list sorted by influence
     for (var ship in playerA)
-        playerA[ship].side = 'a';
+        playerA[ship].player = 'a';
     for (var ship in playerB)
-        playerB[ship].side = 'b';
+        playerB[ship].player = 'b';
     var ships = [].concat(playerA, playerB);
     ships.sort(function(a, b) { return a['influence'] < b['influence']; });
 
