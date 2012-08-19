@@ -1,26 +1,26 @@
 'use strict';
 
-var items = {};
-items['ion cannon'] = {
+var parts = {};
+parts['ion cannon'] = {
     dice: 1,
     damage: 1,
     energy: -1
 };
-items['plasma cannon'] = {
+parts['plasma cannon'] = {
     dice: 1,
     damage: 2,
     energy: -2,
     cost_max: 6,
     cost_min: 4
 };
-items['antimatter cannon'] = {
+parts['antimatter cannon'] = {
     dice: 1,
     damage: 4,
     energy: -4,
     cost_max: 14,
     cost_min: 7
 };
-items['plasma missle'] = {
+parts['plasma missle'] = {
     dice: 2,
     damage: 2,
     cost_max: 14,
@@ -28,17 +28,17 @@ items['plasma missle'] = {
     shoot_once: true
 };
 
-items['electron computer'] = {
+parts['electron computer'] = {
     computer: 1
 };
-items['positron computer'] = {
+parts['positron computer'] = {
     computer: 2,
     influence: 1,
     energy: -1,
     cost_max: 8,
     cost_min: 5
 };
-items['gluon computer'] = {
+parts['gluon computer'] = {
     computer: 3,
     influence: 2,
     energy: -2,
@@ -46,33 +46,33 @@ items['gluon computer'] = {
     cost_min: 8
 };
 
-items['nuclear source'] = {
+parts['nuclear source'] = {
     energy: 3
 };
-items['fusion source'] = {
+parts['fusion source'] = {
     energy: 6,
     cost_max: 6,
     cost_min: 4
 };
-items['tachyon source'] = {
+parts['tachyon source'] = {
     energy: 9,
     cost_max: 12,
     cost_min: 6
 };
 
-items['nuclear drive'] = {
+parts['nuclear drive'] = {
     energy: -1,
     influence: 1,
     speed: 1
 };
-items['fusion drive'] = {
+parts['fusion drive'] = {
     energy: -2,
     influence: 2,
     cost_max: 4,
     cost_min: 3,
     speed: 2
 };
-items['tachyon drive'] = {
+parts['tachyon drive'] = {
     energy: -3,
     influence: 3,
     cost_max: 12,
@@ -80,102 +80,102 @@ items['tachyon drive'] = {
     speed: 3
 };
 
-items['hull'] = {
+parts['hull'] = {
     hull: 1
 };
-items['improved hull'] = {
+parts['improved hull'] = {
     hull: 2,
     cost_max: 4,
     cost_min: 3
 };
-items['gauss shield'] = {
+parts['gauss shield'] = {
     shield: 1,
     cost_max: 2,
     cost_min: 2
 };
-items['phase shield'] = {
+parts['phase shield'] = {
     shield: 2,
     energy: -1,
     cost_max: 8,
     cost_min: 5
 };
 
-items['influence_1'] = {
+parts['influence_1'] = {
     influence: 1,
     upgradeable: false
 };
-items['influence_2'] = {
+parts['influence_2'] = {
     influence: 2,
     upgradeable: false
 };
-items['influence_3'] = {
+parts['influence_3'] = {
     influence: 2,
     upgradeable: false
 };
-items['influence_4'] = {
+parts['influence_4'] = {
     influence: 2,
     upgradeable: false
 };
 
 // Include the object name inside the object
 // for when we output the results
-for (var n in items) {
-    items[n]['name'] = n;
+for (var n in parts) {
+    parts[n]['name'] = n;
 }
 
 
 var ancient = [];
-ancient.push(items['ion cannon']);
-ancient.push(items['ion cannon']);
-ancient.push(items['electron computer']);
-ancient.push(items['hull']);
-ancient.push(items['influence_2']);
+ancient.push(parts['ion cannon']);
+ancient.push(parts['ion cannon']);
+ancient.push(parts['electron computer']);
+ancient.push(parts['hull']);
+ancient.push(parts['influence_2']);
 // technically not on the board, but not a valid ship without
-ancient.push(items['nuclear drive']);
-ancient.push(items['nuclear source']);
+ancient.push(parts['nuclear drive']);
+ancient.push(parts['nuclear source']);
 
 var gcds = [];
-gcds.push(items['ion cannon']);
-gcds.push(items['ion cannon']);
-gcds.push(items['ion cannon']);
-gcds.push(items['ion cannon']);
-gcds.push(items['electron computer']);
-gcds.push(items['hull']);
-gcds.push(items['hull']);
-gcds.push(items['hull']);
-gcds.push(items['hull']);
-gcds.push(items['hull']);
-gcds.push(items['hull']);
-gcds.push(items['hull']);
+gcds.push(parts['ion cannon']);
+gcds.push(parts['ion cannon']);
+gcds.push(parts['ion cannon']);
+gcds.push(parts['ion cannon']);
+gcds.push(parts['electron computer']);
+gcds.push(parts['hull']);
+gcds.push(parts['hull']);
+gcds.push(parts['hull']);
+gcds.push(parts['hull']);
+gcds.push(parts['hull']);
+gcds.push(parts['hull']);
+gcds.push(parts['hull']);
 // technically not on the board, but not a valid ship without
-gcds.push(items['nuclear drive']);
-gcds.push(items['fusion source']);
+gcds.push(parts['nuclear drive']);
+gcds.push(parts['fusion source']);
 
 var interceptor = [];
 interceptor.push({});
-interceptor.push(items['ion cannon']);
-interceptor.push(items['nuclear source']);
-interceptor.push(items['nuclear drive']);
-interceptor.push(items['influence_2']);
+interceptor.push(parts['ion cannon']);
+interceptor.push(parts['nuclear source']);
+interceptor.push(parts['nuclear drive']);
+interceptor.push(parts['influence_2']);
 
 var cruiser = [];
 cruiser.push({});
-cruiser.push(items['ion cannon']);
-cruiser.push(items['hull']);
-cruiser.push(items['electron computer']);
-cruiser.push(items['nuclear source']);
-cruiser.push(items['nuclear drive']);
-cruiser.push(items['influence_1']);
+cruiser.push(parts['ion cannon']);
+cruiser.push(parts['hull']);
+cruiser.push(parts['electron computer']);
+cruiser.push(parts['nuclear source']);
+cruiser.push(parts['nuclear drive']);
+cruiser.push(parts['influence_1']);
 
 var dreadnought = [];
 dreadnought.push({});
-dreadnought.push(items['ion cannon']);
-dreadnought.push(items['ion cannon']);
-dreadnought.push(items['hull']);
-dreadnought.push(items['hull']);
-dreadnought.push(items['electron computer']);
-dreadnought.push(items['nuclear source']);
-dreadnought.push(items['nuclear drive']);
+dreadnought.push(parts['ion cannon']);
+dreadnought.push(parts['ion cannon']);
+dreadnought.push(parts['hull']);
+dreadnought.push(parts['hull']);
+dreadnought.push(parts['electron computer']);
+dreadnought.push(parts['nuclear source']);
+dreadnought.push(parts['nuclear drive']);
 
 function validShip(ship) {
     function tally(ship, name) {
@@ -346,15 +346,15 @@ function allValidShipCombinations(numberOfSpaces) {
     }
 
     // Make up a list of only upgradeable parts
-    var itemsArray = [];
-    for (var name in items) {
-        if (items[name]['upgradeable'] === false)
+    var partsArray = [];
+    for (var name in parts) {
+        if (parts[name]['upgradeable'] === false)
             continue;
-        if ((items[name]['cost_max'] || 0) > max_cost)
+        if ((parts[name]['cost_max'] || 0) > max_cost)
             continue;
-        itemsArray.push(items[name]);
+        partsArray.push(parts[name]);
     }
-    var all = combinationsWithRepetition(numberOfSpaces, itemsArray);
+    var all = combinationsWithRepetition(numberOfSpaces, partsArray);
 
     all = all.filter(validShip);
 
