@@ -129,7 +129,8 @@ ancient.push(parts['ion cannon']);
 ancient.push(parts['ion cannon']);
 ancient.push(parts['electron computer']);
 ancient.push(parts['hull']);
-ancient.push(parts['influence_2']);
+// technically it has 2, but 1 comes from the drive
+ancient.push(parts['influence_1']);
 // technically not on the board, but not a valid ship without
 ancient.push(parts['nuclear drive']);
 ancient.push(parts['nuclear source']);
