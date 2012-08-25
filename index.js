@@ -432,7 +432,7 @@ function test_ship(stock) {
         ship = ship.concat(base);
         var defense = [];
         for (var i = 0; i < max_ships; ++i) {
-            defense.push(ship);
+            defense.push(ship.slice(0));
         }
         var r = battle(offense, defense);
         r = Math.floor(r);
