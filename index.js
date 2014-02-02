@@ -427,7 +427,7 @@ function test_ship(stock) {
     var size = stock.length - base.length;
 
     var all = allValidShipCombinations(size);
-    var results = {};
+    var results = [];
     for (var offset in all) {
         var ship = all[offset];
         ship = ship.concat(base);
@@ -448,11 +448,19 @@ function test_ship(stock) {
                 name = name.toUpperCase();
             tname += name + ', ';
         }
-        results[Math.round(r)] = 'Upgrades: ' + upgrades + ' Cost:' + cost + ' Research:' + research + ' Boxes:' + tname + '\n';
+        results[Math.round(r)] = 'Upgrades: ' + upgrades + '  Cost: ' + cost + '  Research: ' + research + '  Boxes: ' + tname;
     }
-    
+
+    document.getElementById('output').innerHTML = "";
+    for (var i = 0; i < results.length; ++i) {
+        if (results[i] == null)
+            continue;
+        document.getElementById('output').innerHTML += i + " " + results[i] + "<br/>";
+    }
+
     console.log(results);
     
+    /*
     var best = 0;
     var bestShip;
     for (var ship in results) {
@@ -462,6 +470,7 @@ function test_ship(stock) {
         }
     }
     return best + '% ' + bestShip;
+    */
 }
 
 function test_interceptor() {
@@ -476,7 +485,7 @@ function test_dreadnought() {
     return test_ship(dreadnought);
 }
 
-var offense = [gcds];
+var offense = [ancient];
 var max_tries = 200;
 var max_research = 1;
 var max_cost = 10;
