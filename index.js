@@ -448,8 +448,9 @@ function test_ship(stock) {
                 name = name.toUpperCase();
             tname += name + ', ';
         }
-        results[r] = 'Upgrades: ' + upgrades + ' Cost:' + cost + ' Research:' + research + ' boxes:' + tname + '\n';
+        results[Math.round(r)] = 'Upgrades: ' + upgrades + ' Cost:' + cost + ' Research:' + research + ' Boxes:' + tname + '\n';
     }
+    
     console.log(results);
     
     var best = 0;
@@ -475,7 +476,7 @@ function test_dreadnought() {
     return test_ship(dreadnought);
 }
 
-var offense = [ancient];
+var offense = [gcds];
 var max_tries = 200;
 var max_research = 1;
 var max_cost = 10;
