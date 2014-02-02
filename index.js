@@ -448,10 +448,10 @@ function test_ship(stock) {
                 name = name.toUpperCase();
             tname += name + ', ';
         }
-        results[r] = 'Upgrades: ' + upgrades + ' Cost:' + cost + ' Research:' + research + ' boxes:' + tname;
+        results[r] = 'Upgrades: ' + upgrades + ' Cost:' + cost + ' Research:' + research + ' boxes:' + tname + '\n';
     }
     console.log(results);
-
+    
     var best = 0;
     var bestShip;
     for (var ship in results) {
