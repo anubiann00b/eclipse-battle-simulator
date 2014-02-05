@@ -11,7 +11,7 @@ At most 2 research upgrade and at most spending 10 research
     ~44% Upgrades: 2 Cost:10 Research:2 boxes:PLASMA CANNON, nuclear source, nuclear drive, IMPROVED HULL, influence_2
 
 
-To run the eclipse battle simulator visit http://icefox.github.com/eclipse-battle-simulator using Google Chrome and do the following steps:
+To run the eclipse battle simulator visit http://anubiann00b.github.com/eclipse-battle-simulator using Google Chrome and do the following steps:
 
 1) Pull up inspector, by right clicking on the screen and selecting 'Inspect Element'
 2) Goto the console tab
